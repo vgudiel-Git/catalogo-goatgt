@@ -312,11 +312,11 @@ main {
   background-position: 
     0 0,
     0% center,
-    auto center,
-    auto center,
-    auto center,
-    auto center,
-    auto center;
+    100% center,
+    200% center,
+    300% center,
+    400% center,
+    500% center;
   background-repeat: no-repeat;
   color: white;
   padding: 2rem 1rem;
