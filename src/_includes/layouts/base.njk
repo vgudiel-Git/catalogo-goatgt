@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/png" href="/assets/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <!-- Fixed animated background -->
+  <div class="fixed-background"></div>
+  
+  <!-- Page content -->
+  <div class="page-content">
+    <header>
+    <div class="header-inner">
+      <h1><a href="/"><img src="/assets/images/logo.png" alt="LAPRO" class="logo-image"></a></h1>
+      <nav>
+        <ul class="main-menu">
+          <!-- Botón directo para desktop -->
+          <li class="desktop-ofertas">
+            <a href="/index.html#ofertas" class="ofertas-button desktop-button">Ofertas del Mes</a>
+          </li>
+          <!-- Botón directo para móvil/tablet -->
+          <li class="mobile-ofertas">
+            <a href="/index.html#ofertas" class="ofertas-button mobile-button">Ofertas</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Christmas Banner -->
+  <header class="christmas-banner">
+    <!-- Snowflakes will be dynamically added here by JavaScript -->
+    
+    <span class="banner-decoration left" role="img" aria-label="Christmas Tree">🎄</span>
+    
+    <h1 class="banner-title">Catálogo Navideño</h1>
+    
+    <span class="banner-decoration right" role="img" aria-label="Santa Claus Hat">🎅</span>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+    <footer>
+      <p>&copy; 2025 Agencia LAPRO</p>
+    </footer>
+  </div>
+
+  <!-- Script de Netlify Identity para redirección -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+  <script>
+    // Product card animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate product cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all product cards
+      document.querySelectorAll('.product-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+
+    // Manejar clics en los botones de ofertas del header
+    document.addEventListener('DOMContentLoaded', function() {
+      const ofertasButtons = document.querySelectorAll('.ofertas-button');
+      
+      ofertasButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Verificar si estamos en la página principal
+          const categoryLinks = document.querySelectorAll('.category-nav a');
+          const ofertasSection = document.getElementById('ofertas');
+          
+          // Si estamos en la página principal (tiene navegación de categorías y sección ofertas)
+          if (categoryLinks.length > 0 && ofertasSection) {
+            e.preventDefault();
+            
+            // Activar la pestaña de ofertas
+            const categorySections = document.querySelectorAll('.category-section');
+            
+            // Eliminar la clase active de todos los enlaces y secciones
+            categoryLinks.forEach(l => l.classList.remove('active'));
+            categorySections.forEach(s => s.classList.remove('active'));
+            
+            // Activar la pestaña de ofertas
+            const ofertasLink = document.querySelector('.category-nav a[href="#ofertas"]');
+            
+            if (ofertasLink && ofertasSection) {
+              ofertasLink.classList.add('active');
+              ofertasSection.classList.add('active');
+              
+              // Scroll suave hacia la sección
+              ofertasSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+          // Si no estamos en la página principal, dejar que el enlace funcione normalmente
+          // (no hacer preventDefault, permitir la navegación a /index.html#ofertas)
+        });
+      });
+    });
+
+    // Christmas Banner Snowflake Animation
+    document.addEventListener('DOMContentLoaded', function () {
+      const banner = document.querySelector('.christmas-banner');
+      if (banner) {
+        // More snowflakes for a denser effect on wider screens
+        const numberOfSnowflakes = window.innerWidth > 768 ? 50 : 25; 
+
+        for (let i = 0; i < numberOfSnowflakes; i++) {
+          let snowflake = document.createElement('div');
+          snowflake.className = 'snowflake';
+          
+          // Randomize size, position, and animation timing for a natural look
+          const size = Math.random() * 4 + 2 + 'px';
+          snowflake.style.width = size;
+          snowflake.style.height = size;
+          snowflake.style.left = Math.random() * 100 + 'vw';
+          snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's'; // 5-10 seconds
+          snowflake.style.animationDelay = Math.random() * 5 + 's';
+
+          banner.appendChild(snowflake);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
