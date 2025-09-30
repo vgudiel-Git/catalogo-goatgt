@@ -34,15 +34,47 @@
     </div>
   </header>
 
-  <!-- Christmas Banner -->
-  <header class="christmas-banner">
-    <!-- Snowflakes will be dynamically added here by JavaScript -->
-    
-    <span class="banner-decoration left" role="img" aria-label="Christmas Tree">🎄</span>
-    
-    <h1 class="banner-title">Catálogo Navideño</h1>
-    
-    <span class="banner-decoration right" role="img" aria-label="Santa Claus Hat">🎅</span>
+  <!-- Black Friday Banner -->
+  <header class="black-friday-banner">
+    <div class="banner-container">
+      <!-- Main Offer Text -->
+      <div class="offer-text">
+        <h1 class="banner-title">Black Friday</h1>
+        <p class="banner-subtitle">
+          <span class="highlight">LA OFERTA TERMINA PRONTO</span> - HASTA 70% DE DESCUENTO
+        </p>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div id="countdown-timer" class="countdown-timer">
+        <div class="timer-item">
+          <div id="days" class="timer-digit">00</div>
+          <div class="timer-label">Días</div>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-item">
+          <div id="hours" class="timer-digit">00</div>
+          <div class="timer-label">Horas</div>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-item">
+          <div id="minutes" class="timer-digit">00</div>
+          <div class="timer-label">Minutos</div>
+        </div>
+        <div class="timer-separator">:</div>
+        <div class="timer-item">
+          <div id="seconds" class="timer-digit">00</div>
+          <div class="timer-label">Segundos</div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="cta-button-wrapper">
+        <a href="#ofertas" class="cta-button">
+          VER OFERTAS
+        </a>
+      </div>
+    </div>
   </header>
 
   <main>

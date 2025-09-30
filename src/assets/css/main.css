@@ -290,102 +290,213 @@ main {
   box-shadow: none;
 }
 
-/* --- Christmas Banner --- */
-.christmas-banner {
-  background: linear-gradient(135deg, #c8102e, #a40822);
+/* --- Black Friday Banner --- */
+.black-friday-banner {
+  background-image: linear-gradient(to right, rgb(17 24 39), rgb(0 0 0), rgb(17 24 39));
   color: white;
   padding: 2rem 1rem;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
-  border-bottom: 4px solid #f1c40f;
   box-sizing: border-box;
   margin-top: 0;
   z-index: 50;
 }
 
+.banner-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Offer Text Section */
+.offer-text {
+  text-align: center;
+}
+
 .banner-title {
   font-family: 'Merienda', cursive;
-  font-size: 3.5rem;
-  margin: 0 1.5rem;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-  animation: fadeInText 1.5s ease-out forwards;
-  z-index: 10;
-  font-weight: 700;
-}
-
-.banner-decoration {
   font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #facc15;
+  text-transform: uppercase;
+  animation: subtle-glow 3s ease-in-out infinite;
+  margin: 0;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.banner-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.banner-subtitle .highlight {
+  font-weight: 700;
+  color: white;
+  font-size: 1.25rem;
+}
+
+/* A subtle glow animation for the main text */
+@keyframes subtle-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(250, 204, 21, 0.4), 3px 3px 5px rgba(0, 0, 0, 0.3); }
+  50% { text-shadow: 0 0 16px rgba(250, 204, 21, 0.7), 3px 3px 5px rgba(0, 0, 0, 0.3); }
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-digit {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  width: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  color: #9ca3af;
+}
+
+.timer-separator {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+/* CTA Button */
+.cta-button-wrapper {
+  flex-shrink: 0;
+}
+
+.cta-button {
   display: inline-block;
-  animation: sway 4s ease-in-out infinite;
-  transform-origin: top center;
-  z-index: 10;
+  background-color: #facc15;
+  color: black;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
 }
 
-.banner-decoration.left {
-  animation-delay: -2s;
+.cta-button:hover {
+  background-color: #fde047;
+  transform: scale(1.05);
+  color: black;
 }
 
-.snowflake {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  opacity: 0;
-  animation: fall linear infinite;
-  z-index: 1;
+/* Responsive Black Friday Banner */
+@media (min-width: 640px) {
+  .banner-container {
+    padding: 1.5rem;
+  }
 }
 
-/* Christmas Banner Animations */
-@keyframes fadeInText {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (min-width: 768px) {
+  .banner-title {
+    font-size: 3.5rem;
+  }
+  .banner-subtitle {
+    font-size: 1.125rem;
+  }
+  .countdown-timer {
+    gap: 1rem;
+  }
+  .timer-digit {
+    font-size: 2.25rem;
+    width: 5rem;
+  }
+  .timer-separator {
+    font-size: 2.25rem;
+  }
 }
 
-@keyframes sway {
-  0%, 100% { transform: rotate(5deg); }
-  50% { transform: rotate(-5deg); }
+@media (min-width: 1024px) {
+  .banner-container {
+    flex-direction: row;
+  }
+  .offer-text {
+    text-align: left;
+  }
 }
 
-@keyframes fall {
-  0% { transform: translateY(-10vh); opacity: 0; }
-  10% { opacity: 0.8; }
-  90% { opacity: 0.8; }
-  100% { transform: translateY(15vh); opacity: 0; }
-}
-
-/* Responsive Christmas Banner */
 @media (max-width: 768px) {
-  .christmas-banner {
+  .black-friday-banner {
     padding: 1.5rem 1rem;
   }
   
   .banner-title {
     font-size: 2.25rem;
-    margin: 0 1rem;
   }
   
-  .banner-decoration {
-    font-size: 2rem;
+  .banner-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .banner-subtitle .highlight {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .christmas-banner {
+  .black-friday-banner {
     padding: 1rem 0.5rem;
   }
   
   .banner-title {
-    font-size: 2.25rem;
-    margin: 0 0.5rem;
+    font-size: 2rem;
   }
   
-  .banner-decoration {
-    font-size: 1.75rem;
+  .banner-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .banner-subtitle .highlight {
+    font-size: 1rem;
+  }
+  
+  .timer-digit {
+    font-size: 1.25rem;
+    width: 3rem;
+    padding: 0.5rem;
+  }
+  
+  .timer-separator {
+    font-size: 1.25rem;
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
