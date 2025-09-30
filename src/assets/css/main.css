@@ -303,12 +303,12 @@ main {
     url('/assets/images/termo-stanley.png');
   background-size: 
     100% 100%,
-    20% cover,
-    20% cover,
-    20% cover,
-    20% cover,
-    20% cover,
-    20% cover;
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%;
   background-position: 
     0 0,
     0% center,
@@ -484,9 +484,9 @@ main {
       url('/assets/images/audífonos-apple-airpods.png');
     background-size: 
       100% 100%,
-      33.33% cover,
-      33.33% cover,
-      33.33% cover;
+      33.33% 100%,
+      33.33% 100%,
+      33.33% 100%;
     background-position: 
       0 0,
       0% center,
@@ -505,8 +505,8 @@ main {
       url('/assets/images/consola-microsoft-xbox.jpg');
     background-size: 
       100% 100%,
-      50% cover,
-      50% cover;
+      50% 100%,
+      50% 100%;
     background-position: 
       0 0,
       0% center,
@@ -535,7 +535,7 @@ main {
       url('/assets/images/amazon-firestick.png');
     background-size: 
       100% 100%,
-      cover;
+      100% 100%;
     background-position: 
       0 0,
       center center;
@@ -577,7 +577,7 @@ main {
       url('/assets/images/amazon-firestick.png');
     background-size: 
       100% 100%,
-      cover;
+      100% 100%;
     background-position: 
       0 0,
       center center;
