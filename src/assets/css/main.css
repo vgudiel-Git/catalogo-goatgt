@@ -303,12 +303,12 @@ main {
     url('/assets/images/termo-stanley.png');
   background-size: 
     100% 100%,
-    20% 100%,
-    20% 100%,
-    20% 100%,
-    20% 100%,
-    20% 100%,
-    20% 100%;
+    auto 100%,
+    auto 100%,
+    auto 100%,
+    auto 100%,
+    auto 100%,
+    auto 100%;
   background-position: 
     0 0,
     0% center,
@@ -474,43 +474,10 @@ main {
   }
 }
 
-/* Medium tablets - show 3 images */
-@media (max-width: 900px) and (min-width: 769px) {
-  .black-friday-banner {
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/assets/images/amazon-firestick.png'),
-      url('/assets/images/consola-microsoft-xbox.jpg'),
-      url('/assets/images/audífonos-apple-airpods.png');
-    background-size: 
-      100% 100%,
-      33.33% 100%,
-      33.33% 100%,
-      33.33% 100%;
-    background-position: 
-      0 0,
-      0% center,
-      33.33% center,
-      66.66% center;
-  }
-}
-
+/* Responsive banner - images will naturally fit based on screen width */
 @media (max-width: 768px) {
   .black-friday-banner {
     padding: 1.5rem 1rem;
-    /* Show only 2 images on tablets */
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/assets/images/amazon-firestick.png'),
-      url('/assets/images/consola-microsoft-xbox.jpg');
-    background-size: 
-      100% 100%,
-      50% 100%,
-      50% 100%;
-    background-position: 
-      0 0,
-      0% center,
-      50% center;
   }
   
   .banner-title {
@@ -529,16 +496,6 @@ main {
 @media (max-width: 480px) {
   .black-friday-banner {
     padding: 1rem 0.5rem;
-    /* Show only 1 image on mobile */
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/assets/images/amazon-firestick.png');
-    background-size: 
-      100% 100%,
-      100% 100%;
-    background-position: 
-      0 0,
-      center center;
   }
   
   .banner-title {
@@ -569,18 +526,10 @@ main {
   }
 }
 
-/* Very small mobile devices - ensure no stretching */
+/* Very small mobile devices */
 @media (max-width: 360px) {
   .black-friday-banner {
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/assets/images/amazon-firestick.png');
-    background-size: 
-      100% 100%,
-      100% 100%;
-    background-position: 
-      0 0,
-      center center;
+    padding: 0.75rem 0.25rem;
   }
 }
 
