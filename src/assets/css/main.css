@@ -474,37 +474,9 @@ main {
   }
 }
 
-/* Medium tablets - show 5 images */
+/* Medium tablets - show 4 images */
 @media (max-width: 900px) and (min-width: 769px) {
   .black-friday-banner {
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/assets/images/amazon-firestick.png'),
-      url('/assets/images/consola-microsoft-xbox.jpg'),
-      url('/assets/images/audífonos-apple-airpods.png'),
-      url('/assets/images/dronmini-4-pro.png'),
-      url('/assets/images/tenis-adidas.jpeg');
-    background-size: 
-      100% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%;
-    background-position: 
-      0 0,
-      0% 0%,
-      20% 0%,
-      40% 0%,
-      60% 0%,
-      80% 0%;
-  }
-}
-
-@media (max-width: 768px) {
-  .black-friday-banner {
-    padding: 1.5rem 1rem;
-    /* Show only 4 images on tablets */
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url('/assets/images/amazon-firestick.png'),
@@ -523,6 +495,28 @@ main {
       25% 0%,
       50% 0%,
       75% 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  .black-friday-banner {
+    padding: 1.5rem 1rem;
+    /* Show only 3 images on tablets */
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg'),
+      url('/assets/images/audífonos-apple-airpods.png');
+    background-size: 
+      100% 100%,
+      33.33% 100%,
+      33.33% 100%,
+      33.33% 100%;
+    background-position: 
+      0 0,
+      0% 0%,
+      33.33% 0%,
+      66.66% 0%;
   }
   
   .banner-title {
