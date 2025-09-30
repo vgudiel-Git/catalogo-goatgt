@@ -474,8 +474,8 @@ main {
   }
 }
 
-/* Responsive banner - show fewer images on smaller screens */
-@media (max-width: 1200px) {
+/* Responsive banner - images disappear before stretching */
+@media (max-width: 1400px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -501,7 +501,7 @@ main {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -524,7 +524,7 @@ main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .black-friday-banner {
     padding: 1.5rem 1rem;
     background-image: 
@@ -557,7 +557,7 @@ main {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
