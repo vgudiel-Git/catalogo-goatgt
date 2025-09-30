@@ -303,20 +303,20 @@ main {
     url('/assets/images/termo-stanley.png');
   background-size: 
     100% 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%;
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%,
+    20% 100%;
   background-position: 
     0 0,
     0% center,
-    100% center,
-    200% center,
-    300% center,
-    400% center,
-    500% center;
+    20% center,
+    40% center,
+    60% center,
+    80% center,
+    100% center;
   background-repeat: no-repeat;
   color: white;
   padding: 2rem 1rem;
@@ -474,10 +474,74 @@ main {
   }
 }
 
-/* Responsive banner - images will naturally fit based on screen width */
+/* Responsive banner - show fewer images on smaller screens */
+@media (max-width: 1200px) {
+  .black-friday-banner {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg'),
+      url('/assets/images/audífonos-apple-airpods.png'),
+      url('/assets/images/dronmini-4-pro.png'),
+      url('/assets/images/tenis-adidas.jpeg');
+    background-size: 
+      100% 100%,
+      20% 100%,
+      20% 100%,
+      20% 100%,
+      20% 100%,
+      20% 100%;
+    background-position: 
+      0 0,
+      0% center,
+      20% center,
+      40% center,
+      60% center,
+      80% center;
+  }
+}
+
+@media (max-width: 900px) {
+  .black-friday-banner {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg'),
+      url('/assets/images/audífonos-apple-airpods.png'),
+      url('/assets/images/dronmini-4-pro.png');
+    background-size: 
+      100% 100%,
+      25% 100%,
+      25% 100%,
+      25% 100%,
+      25% 100%;
+    background-position: 
+      0 0,
+      0% center,
+      25% center,
+      50% center,
+      75% center;
+  }
+}
+
 @media (max-width: 768px) {
   .black-friday-banner {
     padding: 1.5rem 1rem;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg'),
+      url('/assets/images/audífonos-apple-airpods.png');
+    background-size: 
+      100% 100%,
+      33.33% 100%,
+      33.33% 100%,
+      33.33% 100%;
+    background-position: 
+      0 0,
+      0% center,
+      33.33% center,
+      66.66% center;
   }
   
   .banner-title {
@@ -493,9 +557,35 @@ main {
   }
 }
 
+@media (max-width: 600px) {
+  .black-friday-banner {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg');
+    background-size: 
+      100% 100%,
+      50% 100%,
+      50% 100%;
+    background-position: 
+      0 0,
+      0% center,
+      50% center;
+  }
+}
+
 @media (max-width: 480px) {
   .black-friday-banner {
     padding: 1rem 0.5rem;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png');
+    background-size: 
+      100% 100%,
+      100% 100%;
+    background-position: 
+      0 0,
+      center center;
   }
   
   .banner-title {
