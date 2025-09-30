@@ -1,0 +1,582 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colores ==========*/
+  /* Usaremos una paleta de Teal/Verde profesional y moderna */
+  --first-color: #00A79D;
+  --first-color-alt: #007A72;
+  --second-color: #1DD1A1;
+  --title-color: #222222;
+  --text-color: #555555;
+  --text-color-light: #888888;
+  --body-color: #FFFFFF;
+  --container-color: #FFFFFF;
+  --gradient-color: linear-gradient(135deg, var(--first-color), var(--second-color));
+  --gradient-dark: linear-gradient(135deg, #005a54, var(--first-color));
+
+  /*========== Tipografía ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+
+  /*========== Peso de la fuente ==========*/
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Margenes y Paddings ==========*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z-index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 992px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1.1rem;
+    --small-font-size: .9rem;
+    --smaller-font-size: .85rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0 2.5rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  text-align: center;
+  margin-bottom: var(--mb-2);
+}
+
+.section__title span {
+  color: var(--first-color);
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  box-shadow: 0 2px 4px hsla(0, 0%, 15%, 0.1);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+}
+
+.nav__logo span {
+  color: var(--first-color);
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--title-color);
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--body-color);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    padding: 4rem 2rem 3rem;
+    transition: right .4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  transition: color .3s;
+}
+
+.nav__link:hover, .active-link {
+  color: var(--first-color);
+}
+
+.nav__cta {
+  background: var(--gradient-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+}
+.nav__cta:hover {
+    color: white;
+    box-shadow: 0 4px 15px hsla(175, 100%, 33%, 0.4);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+}
+
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/*=============== BOTONES ===============*/
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: var(--font-semi-bold);
+    transition: all .3s ease;
+}
+.btn-primary {
+    background: var(--gradient-color);
+    color: white;
+}
+.btn-primary:hover {
+    box-shadow: 0 4px 20px hsla(175, 100%, 33%, 0.5);
+    transform: translateY(-3px);
+}
+.btn-secondary {
+    background: white;
+    color: var(--first-color);
+    border: 2px solid var(--first-color);
+}
+.btn-secondary:hover {
+    background-color: var(--first-color-alt);
+    color: white;
+}
+
+/*=============== HERO ===============*/
+.hero {
+  background-color: #f8f9fa;
+  padding: 6rem 0 4rem;
+}
+.hero__container {
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.hero__data {
+  text-align: center;
+}
+.hero__title {
+  font-size: var(--biggest-font-size);
+  line-height: 1.2;
+  margin-bottom: var(--mb-1);
+}
+.hero__title span {
+  color: var(--first-color);
+}
+.hero__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-light);
+  margin-bottom: var(--mb-2);
+}
+.hero__image img {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+}
+
+/*=============== BENEFITS ===============*/
+.benefits__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.benefit__card {
+    background-color: var(--container-color);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: .75rem;
+    box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.05);
+    transition: transform .3s, box-shadow .3s;
+}
+.benefit__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px hsla(175, 100%, 33%, 0.15);
+}
+.benefit__card i {
+    font-size: 3rem;
+    color: var(--first-color);
+    margin-bottom: var(--mb-1);
+}
+.benefit__card h3 {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+}
+
+/*=============== INTRO SERVICIOS ===============*/
+.intro-services {
+    background-color: #f8f9fa;
+}
+.intro-services__grid {
+    gap: 3rem;
+}
+.intro-service__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px hsla(0,0%,0%,.07);
+}
+.intro-service__item img {
+    border-radius: .5rem;
+    width: 100%;
+}
+.intro-service__data h3 {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    transition: transform .3s;
+}
+.link-arrow:hover {
+    transform: translateX(5px);
+}
+.link-arrow i {
+    font-size: 1.25rem;
+    margin-left: .25rem;
+}
+
+/*=============== SOCIAL PROOF (CLIENTES) ===============*/
+.clients__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+.clients__logos img {
+    max-height: 50px;
+    transition: all .3s ease;
+}
+.clients__logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/*=============== TESTIMONIALS ===============*/
+.testimonials {
+    background: var(--gradient-dark);
+    color: white;
+}
+.testimonials .section__title {
+    color: white;
+}
+.testimonial__card {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.testimonial__card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--second-color);
+    margin-bottom: var(--mb-1-5);
+}
+.testimonial__card blockquote {
+    font-size: var(--h3-font-size);
+    font-style: italic;
+    font-weight: var(--font-light);
+    line-height: 1.6;
+    margin-bottom: var(--mb-1-5);
+}
+.testimonial__card cite {
+    font-style: normal;
+    font-weight: var(--font-semi-bold);
+}
+.testimonial__card cite strong {
+    display: block;
+    font-size: var(--normal-font-size);
+}
+
+/*=============== CTA FINAL ===============*/
+.cta {
+    background: var(--gradient-color);
+    text-align: center;
+    padding: 5rem 0;
+}
+.cta__container {
+    color: white;
+}
+.cta__title {
+    color: white;
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-1);
+}
+.cta p {
+    margin-bottom: var(--mb-2);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta .btn-secondary {
+    background-color: white;
+    color: var(--first-color);
+}
+.cta .btn-secondary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    background-color: #222;
+    color: var(--text-color-light);
+    padding-top: 4rem;
+}
+.footer__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+.footer__logo {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: white;
+    margin-bottom: var(--mb-1);
+    display: inline-block;
+}
+.footer__logo span {
+    color: var(--first-color);
+}
+.footer__section h3 {
+    color: white;
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+}
+.footer__section ul li {
+    margin-bottom: var(--mb-0-75);
+}
+.footer__section ul li a {
+    color: var(--text-color-light);
+    transition: color .3s;
+}
+.footer__section ul li a:hover {
+    color: var(--first-color);
+}
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: var(--mb-1-5);
+}
+.footer__socials a {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    transition: color .3s;
+}
+.footer__socials a:hover {
+    color: var(--first-color);
+}
+.footer__copy {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    font-size: var(--small-font-size);
+}
+
+/*=============== BOTÓN WHATSAPP ===============*/
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+  .hero__subtitle, .cta p {
+    font-size: var(--normal-font-size);
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 6rem 0 4rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+  .nav__menu {
+    width: auto;
+  }
+  .hero__container {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  .hero__data {
+    text-align: left;
+  }
+  .intro-service__item {
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+  }
+  /* Alternar imagen y texto */
+  .intro-service__item:nth-child(even) {
+    grid-template-columns: 1fr 300px;
+  }
+  .intro-service__item:nth-child(even) .intro-service__data {
+    order: -1;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__container {
+    gap: 4rem;
+  }
+  .hero__title {
+    line-height: 1.3;
+  }
+}

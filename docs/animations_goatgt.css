@@ -1,0 +1,100 @@
+/*=============== ANIMACIONES ON-SCROLL ===============*/
+
+/* 
+  Estado inicial de los elementos que se animarán.
+  Están invisibles y listos para la transición.
+*/
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease-out, transform 0.6s ease-out;
+}
+
+/* 
+  Cuando JavaScript agregue la clase '.visible', el elemento se mostrará.
+  La animación específica se define en las clases de abajo.
+*/
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/*=============== DEFINICIONES DE KEYFRAMES ===============*/
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*=============== CLASES DE ANIMACIÓN ===============*/
+/*
+  Cuando JavaScript agregue la clase '.visible', se aplicará la animación correspondiente.
+  Usamos 'animation-fill-mode: forwards' para que el estado final de la animación persista.
+*/
+
+.animate-on-scroll.visible.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.visible.fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.visible.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.visible.fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.visible.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
