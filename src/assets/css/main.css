@@ -474,8 +474,8 @@ main {
   }
 }
 
-/* Responsive banner - images disappear before stretching */
-@media (max-width: 1400px) {
+/* Responsive banner - remove images before stretching, only last image can be cut */
+@media (max-width: 1600px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -501,7 +501,7 @@ main {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -524,7 +524,7 @@ main {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .black-friday-banner {
     padding: 1.5rem 1rem;
     background-image: 
@@ -557,7 +557,7 @@ main {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
