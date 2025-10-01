@@ -486,11 +486,11 @@ main {
       url('/assets/images/tenis-adidas.jpeg');
     background-size: 
       100% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%,
-      20% 100%;
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%;
     background-position: 
       0 0,
       0% center,
@@ -511,10 +511,10 @@ main {
       url('/assets/images/dronmini-4-pro.png');
     background-size: 
       100% 100%,
-      25% 100%,
-      25% 100%,
-      25% 100%,
-      25% 100%;
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%;
     background-position: 
       0 0,
       0% center,
@@ -534,9 +534,9 @@ main {
       url('/assets/images/audífonos-apple-airpods.png');
     background-size: 
       100% 100%,
-      33.33% 100%,
-      33.33% 100%,
-      33.33% 100%;
+      auto 100%,
+      auto 100%,
+      auto 100%;
     background-position: 
       0 0,
       0% center,
@@ -565,8 +565,8 @@ main {
       url('/assets/images/consola-microsoft-xbox.jpg');
     background-size: 
       100% 100%,
-      50% 100%,
-      50% 100%;
+      auto 100%,
+      auto 100%;
     background-position: 
       0 0,
       0% center,
