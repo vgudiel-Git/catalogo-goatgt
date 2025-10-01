@@ -474,8 +474,37 @@ main {
   }
 }
 
-/* Responsive banner - remove images before stretching, only last image can be cut */
+/* Responsive banner - images disappear from right to left, only last image disappears */
 @media (max-width: 1600px) {
+  .black-friday-banner {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('/assets/images/amazon-firestick.png'),
+      url('/assets/images/consola-microsoft-xbox.jpg'),
+      url('/assets/images/audífonos-apple-airpods.png'),
+      url('/assets/images/dronmini-4-pro.png'),
+      url('/assets/images/tenis-adidas.jpeg'),
+      url('/assets/images/termo-stanley.png');
+    background-size: 
+      100% 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%,
+      auto 100%;
+    background-position: 
+      0 0,
+      0% center,
+      16.66% center,
+      33.33% center,
+      50% center,
+      66.66% center,
+      83.33% center;
+  }
+}
+
+@media (max-width: 1400px) {
   .black-friday-banner {
     background-image: 
       linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
