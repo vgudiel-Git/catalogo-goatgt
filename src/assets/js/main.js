@@ -15,6 +15,7 @@ menuLinks.forEach(link => {
 });
 
 // Black Friday Countdown Timer
+console.log('Black Friday countdown timer starting...');
 const countdownDate = new Date("November 28, 2025 00:00:00").getTime();
 
 const timerInterval = setInterval(function() {
@@ -37,6 +38,16 @@ const timerInterval = setInterval(function() {
     if (hoursElement) hoursElement.innerText = String(hours).padStart(2, '0');
     if (minutesElement) minutesElement.innerText = String(minutes).padStart(2, '0');
     if (secondsElement) secondsElement.innerText = String(seconds).padStart(2, '0');
+
+    // Debug: Log if elements are not found
+    if (!daysElement || !hoursElement || !minutesElement || !secondsElement) {
+        console.log('Countdown elements not found:', {
+            days: !!daysElement,
+            hours: !!hoursElement,
+            minutes: !!minutesElement,
+            seconds: !!secondsElement
+        });
+    }
 
     // If the countdown is over, display a message
     if (distance < 0) {
