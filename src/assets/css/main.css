@@ -293,31 +293,6 @@ main {
 /* --- Black Friday Banner --- */
 .black-friday-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('/assets/images/amazon-firestick.png'),
-    url('/assets/images/consola-microsoft-xbox.jpg'),
-    url('/assets/images/audífonos-apple-airpods.png'),
-    url('/assets/images/dronmini-4-pro.png'),
-    url('/assets/images/tenis-adidas.jpeg'),
-    url('/assets/images/termo-stanley.png');
-  background-size: 
-    100% 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%,
-    auto 100%;
-  background-position: 
-    0 0,
-    0% center,
-    100% center,
-    200% center,
-    300% center,
-    400% center,
-    500% center;
-  background-repeat: no-repeat;
   color: white;
   padding: 2rem 1rem;
   width: 100%;
@@ -329,6 +304,27 @@ main {
   z-index: 50;
 }
 
+/* Product Ribbon */
+.product-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ribbon-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
 .banner-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -338,6 +334,8 @@ main {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Offer Text Section */
