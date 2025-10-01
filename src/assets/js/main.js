@@ -53,40 +53,54 @@ function initProductAnimations() {
 
 // Ofertas buttons functionality
 function initOfertasButtons() {
+    // Handle regular ofertas buttons
     const ofertasButtons = document.querySelectorAll('.ofertas-button');
     
     ofertasButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Verificar si estamos en la página principal
-            const categoryLinks = document.querySelectorAll('.category-nav a');
-            const ofertasSection = document.getElementById('ofertas');
-            
-            // Si estamos en la página principal (tiene navegación de categorías y sección ofertas)
-            if (categoryLinks.length > 0 && ofertasSection) {
-                e.preventDefault();
-                
-                // Activar la pestaña de ofertas
-                const categorySections = document.querySelectorAll('.category-section');
-                
-                // Eliminar la clase active de todos los enlaces y secciones
-                categoryLinks.forEach(l => l.classList.remove('active'));
-                categorySections.forEach(s => s.classList.remove('active'));
-                
-                // Activar la pestaña de ofertas
-                const ofertasLink = document.querySelector('.category-nav a[href="#ofertas"]');
-                
-                if (ofertasLink && ofertasSection) {
-                    ofertasLink.classList.add('active');
-                    ofertasSection.classList.add('active');
-                    
-                    // Scroll suave hacia la sección
-                    ofertasSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-            // Si no estamos en la página principal, dejar que el enlace funcione normalmente
-            // (no hacer preventDefault, permitir la navegación a /index.html#ofertas)
+            handleOfertasNavigation(e);
         });
     });
+    
+    // Handle CTA button in Black Friday banner
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+            handleOfertasNavigation(e);
+        });
+    }
+}
+
+// Common function to handle ofertas navigation
+function handleOfertasNavigation(e) {
+    // Verificar si estamos en la página principal
+    const categoryLinks = document.querySelectorAll('.category-nav a');
+    const ofertasSection = document.getElementById('ofertas');
+    
+    // Si estamos en la página principal (tiene navegación de categorías y sección ofertas)
+    if (categoryLinks.length > 0 && ofertasSection) {
+        e.preventDefault();
+        
+        // Activar la pestaña de ofertas
+        const categorySections = document.querySelectorAll('.category-section');
+        
+        // Eliminar la clase active de todos los enlaces y secciones
+        categoryLinks.forEach(l => l.classList.remove('active'));
+        categorySections.forEach(s => s.classList.remove('active'));
+        
+        // Activar la pestaña de ofertas
+        const ofertasLink = document.querySelector('.category-nav a[href="#ofertas"]');
+        
+        if (ofertasLink && ofertasSection) {
+            ofertasLink.classList.add('active');
+            ofertasSection.classList.add('active');
+            
+            // Scroll suave hacia la sección
+            ofertasSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    // Si no estamos en la página principal, dejar que el enlace funcione normalmente
+    // (no hacer preventDefault, permitir la navegación a /index.html#ofertas)
 }
 
 // Black Friday Countdown Timer
